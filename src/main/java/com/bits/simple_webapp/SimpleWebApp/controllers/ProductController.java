@@ -29,6 +29,11 @@ public class ProductController {
     // Route: POST /products
     @PostMapping
     public void addProduct(@RequestBody Product prod) {
-        services.addProduct(prod); 
+        services.addProduct(prod);
+    }
+
+    @PutMapping
+    public void updateProduct(@RequestBody Product prod){
+        services.updateProduct(prod);
     }
 }

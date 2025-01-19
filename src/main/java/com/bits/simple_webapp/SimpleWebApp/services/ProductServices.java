@@ -25,8 +25,23 @@ public class ProductServices
                 .findFirst().get();
    }
 
+
+
    public void addProduct(Product prod){
         products.add(prod);
    }
 
+    public void updateProduct(Product prod) {
+
+        //loop and get the product by ID then set it
+        int index = 0;
+
+        for(int i = 0; i < products.size(); i++){
+            if(products.get(i).getProdId() == prod.getProdId()){
+                index = i;
+            }
+        }
+
+        products.set(index,prod);
+    }
 }
