@@ -10,11 +10,11 @@ import java.util.List;
 @Service
 public class ProductServices
 {
-    List<Product> products = Arrays.asList(
+    List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(101,"phone",2000),
             new Product(102,"cloth",3000),
             new Product(103,"Band",9000)
-    );
+    ));
     public List<Product> getProduct(){
         return products;
     }
@@ -24,4 +24,9 @@ public class ProductServices
                 .filter(p->p.getProdId() == prodId)
                 .findFirst().get();
    }
+
+   public void addProduct(Product prod){
+        products.add(prod);
+   }
+
 }
